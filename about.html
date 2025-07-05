@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About - Spandana</title>
+
+    <script>
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+    </script>
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+
+</head>
+<style>
+    .animated-list {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+
+    .animated-list li {
+        opacity: 0;
+        transform: translateY(10px);
+        /* animation: fadeInUp 0.5s ease forwards; */
+    }
+
+
+
+    /* Keyframes for fade in + slide up */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Container grid */
+    .values-section {
+        padding: 4rem 2rem;
+        background-color: #fff;
+    }
+
+    .values-section h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        color: #1d3557;
+    }
+
+    .values-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .value-card {
+       
+         background-color: #f7941d;
+        border: 1px solid #e0e0e0;
+        border-radius: 16px;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .value-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px #d8a361;
+        
+    }
+
+    .value-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #457b9d;
+    }
+
+    .value-card p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #555;
+    }
+
+    @media (max-width: 768px) {
+        .values-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const animatedLists = document.querySelectorAll(".animated-list");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const items = entry.target.querySelectorAll("li");
+                    items.forEach((li, index) => {
+                        li.style.animation = `fadeInUp 0.6s ease forwards`;
+                        li.style.animationDelay = `${index * 0.3}s`;
+                    });
+                    observer.unobserve(entry.target); // Animate only once
+                }
+            });
+        }, {
+            threshold: 0.2,
+        });
+
+        animatedLists.forEach((list) => {
+            observer.observe(list);
+        });
+    });
+</script>
+
+<body id="top">
+
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+    <!-- page wrap
+    ================================================== -->
+    <div id="page" class="s-pagewrap">
+
+
+        <!-- # site header 
+        ================================================== -->
+        <header class="s-header">
+            <div class="s-header__inner row width-sixteen-col"
+                style="display: flex; justify-content: space-between; align-items: center;">
+
+                <!-- Logo -->
+                <div class="s-header__logo">
+                    <a class="navbar-brand" href="index.html"
+                        style="font-size: 24px; color: orange; text-decoration: none;">
+                        Spandana
+                    </a>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="s-header__nav" style="display: flex; align-items: center; gap: 40px;">
+
+                    <!-- Menu links -->
+                    <ul class="s-header__menu-links"
+                        style="display: flex; list-style: none; margin: 0; padding: 0; gap: 30px;">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Certificates</a></li>
+                        <li><a href="blog.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+
+                    <!-- Optional button -->
+                    <div class="s-header__contact">
+                        <a href="contact.html" class="btn btn--primary s-header__contact-btn">Let's Work Together</a>
+                    </div>
+
+                </nav>
+            </div>
+        </header>
+
+
+
+        <!-- # site main content
+        ================================================== -->
+        <section id="content" class="s-content">
+
+            <section class="s-pageheader pageheader">
+                <div class="row">
+                    <div class="column xl-12">
+                        <h2 class="page-title">
+                            <span class="page-title__small-type text-pretitle">About</span>
+                            Hello, I'm Spandana
+                        </h2>
+
+                    </div>
+                </div>
+            </section> <!-- end pageheader -->
+
+            <section class="s-pagecontent pagecontent">
+
+                <div class="row pageintro" style="background-color: #f7941d  ;">
+                    <div class="column xl-6 lg-12">
+                        <h2 class="text-display-title">I'm an Enthusiastic and Inquisitive Learner</h2>
+                    </div>
+                    <div class="column xl-6 lg-12 u-flexitem-x-right">
+                        <p class="lead">
+                            <strong>Education:</strong>
+                        <ul class="animated-list">
+                            <li>B.Tech in Computer Science – vardhaman college of Engineering (2023–2027)</li>
+                            <li>12th Grade – Alphores High School (2021–2023)</li>
+                            <li>10th Grade - Alphores High School (2020-2021)</li>
+                        </ul>
+
+                        <strong>Skills:</strong>
+                        <ul class="animated-list">
+                            <li>Web Development (HTML, CSS, JS, React.js)</li>
+                            <li>Backend: Node.js, MongoDB, MySQL</li>
+                            <li>Java, Python programming languages</li>
+                            <li>UI/UX Design Fundamentals</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="row width-narrower pagemain">
+                    <div class="column xl-12">
+
+                        <h2>How I Got Here</h2>
+                        <p>
+                            I got to know about this through Rejolt
+                        </p>
+                        <!-- VALUES & BELIEFS SECTION -->
+                        <section class="values-section">
+                            <h1 style="text-align: left;">My Values & Beliefs</h1>
+                            <div class="values-grid">
+                                <div class="value-card">
+                                    <h3 style="color: black;">Present Matters</h3>
+                                    <h2 style="color: black;">I strongly believe that "Don't let yesterday to take too much of today" and progress everday..</h2>
+                                </div>
+                                <div class="value-card">
+                                    <h3 style="color: black;">Integrity</h3>
+                                    <h2 style="color: black;">I uphold the highest standards of honesty and strong
+                                        moral principles in everything we do.</h2>
+                                </div>
+                                <div class="value-card">
+                                    <h3 style="color: black;">Teamwork</h3>
+                                    <h2 style="color: black;">Collaboration and collective effort drive our success and
+                                        strengthen our community.</h2>
+                                </div>
+                                <div class="value-card">
+                                    <h3 style="color: black;">Giving Best</h3>
+                                    <h2 style="color: black;">I follow the principle of "When you feel like Quitting think of Why you have Started it" So "DOn't quIT"</h2>
+                                </div>
+                            </div>
+                        </section>
+                        <!--grid-list-items -->
+
+                        <h2>Why Work With Me</h2>
+                        <p>
+                            “I deliver high-quality work efficiently, adapt quickly to new challenges, and consistently
+                            seek ways to improve. I'm a fast learner, a proactive team player, and committed to
+                            contributing value in every task I take on.”
+                        </p>
+
+                        <p>
+                            "I bring a strong work ethic, fast learning ability, and a collaborative mindset. I'm
+                            efficient, detail-oriented, and take pride in delivering quality work quickly while
+                            continuously improving and adapting to new challenges."
+                        </p>
+
+                        <h2>A Few More Words About Myself</h2>
+                        <p>
+                            I combine speed, precision, and adaptability to deliver high-quality results that meet your
+                            needs—on time, every time.
+                            I bring a strong foundation in full-stack development and AI, with hands-on experience in
+                            Python, Java, HTML/CSS, JavaScript, React, and Generative AI. I’m an efficient
+                            problem-solver.
+                        </p>
+
+                    </div> <!-- end grid-block-->
+                </div> <!-- end pagemain -->
+
+            </section> <!-- pagecontent -->
+
+
+
+            <!-- # cta
+        ================================================== -->
+            <section id="cta" class="s-cta">
+
+                <div class="row row-x-center text-center">
+                    <div class="column xl-8 lg-12">
+
+                        <div class="s-cta__content">
+                            <h2 class="text-display-title">
+                                Get started.
+                            </h2>
+                            <p class="lead">
+                                Great collaboration can lead to a Great Outcome
+                            </p>
+                            <a href="contact.html" class="btn btn--primary">Let's Work Together</a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section> <!-- end s-cta -->
+
+
+            <!-- # footer 
+        ================================================== -->
+            <footer class="s-footer">
+                <div class="row s-footer__content">
+                    <div class="column xl-6 lg-6 md-12 s-footer__block s-footer__about">
+                        <h3>About Spandana</h3>
+                        <p>
+                            I'm an undergraduate student at vardhaman college of Engineering, Hyderabad
+                            Soon I would like get into a MANG company and find myself Productive and be a Great pillar
+                            to such company.
+                        </p>
+                    </div>
+                    <div class="column xl-3 lg-6 md-12 s-footer__block s-footer__site-links">
+                        <h3>Site Links</h3>
+                        <ul class="link-list">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="services.html">Certificates</a></li>
+                            <li><a href="blog.html">Projects</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <!-- <li><a href="https://www.dreamhost.com/r.cgi?287326">DreamHost</a></li> -->
+                        </ul>
+                    </div>
+                    <div class="column xl-3 lg-6 md-12 tab-12 s-footer__block s-footer__newsletter">
+                        <h3>Newsletter</h3>
+
+                        <p>
+                            Get the latest on my tech projects, AI experiments, coding tips, and more.
+                        </p>
+
+                        <div class="subscribe-form">
+                            <form id="mc-form" class="mc-form">
+                                <input type="email" name="EMAIL" id="mce-EMAIL" class="u-fullwidth text-center"
+                                    placeholder="Your Email Address"
+                                    title="The domain portion of the email address is invalid (the portion after the @)."
+                                    pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$"
+                                    required>
+                                <input type="submit" name="subscribe" value="Subscribe"
+                                    class="btn btn--primary btn--small u-fullwidth">
+                                <!-- <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_cdb7b577e41181934ed6a6a44_9a91cfe7b3" tabindex="-1" value=""></div> -->
+                                <div class="mc-status"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row s-footer__bottom">
+                    <div class="column xl-6 lg-12">
+                        <ul class="s-footer__social social-list">
+                            <li>
+                                <a href="#0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        style="fill:rgba(0, 0, 0, 1);transform:rotate(1deg);opacity: 0.5;
+">
+                                        <path
+                                            d="M20,3H4C3.447,3,3,3.448,3,4v16c0,0.552,0.447,1,1,1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325,1.42-3.592,3.5-3.592 c0.699-0.002,1.399,0.034,2.095,0.107v2.42h-1.435c-1.128,0-1.348,0.538-1.348,1.325v1.735h2.697l-0.35,2.725h-2.348V21H20 c0.553,0,1-0.448,1-1V4C21,3.448,20.553,3,20,3z">
+                                        </path>
+                                    </svg>
+                                    <span class="u-screen-reader-text">Facebook</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        style="fill:rgba(0, 0, 0, 1);transform:rotate(1deg);opacity: 0.5">
+                                        <path
+                                            d="M19.633,7.997c0.013,0.175,0.013,0.349,0.013,0.523c0,5.325-4.053,11.461-11.46,11.461c-2.282,0-4.402-0.661-6.186-1.809 c0.324,0.037,0.636,0.05,0.973,0.05c1.883,0,3.616-0.636,5.001-1.721c-1.771-0.037-3.255-1.197-3.767-2.793 c0.249,0.037,0.499,0.062,0.761,0.062c0.361,0,0.724-0.05,1.061-0.137c-1.847-0.374-3.23-1.995-3.23-3.953v-0.05 c0.537,0.299,1.16,0.486,1.82,0.511C3.534,9.419,2.823,8.184,2.823,6.787c0-0.748,0.199-1.434,0.548-2.032 c1.983,2.443,4.964,4.04,8.306,4.215c-0.062-0.3-0.1-0.611-0.1-0.923c0-2.22,1.796-4.028,4.028-4.028 c1.16,0,2.207,0.486,2.943,1.272c0.91-0.175,1.782-0.512,2.556-0.973c-0.299,0.935-0.936,1.721-1.771,2.22 c0.811-0.088,1.597-0.312,2.319-0.624C21.104,6.712,20.419,7.423,19.633,7.997z">
+                                        </path>
+                                    </svg>
+                                    <span class="u-screen-reader-text">Twitter</span>
+                                </a>
+                            </li>
+                            <li>
+                                 <a href="https://www.linkedin.com/in/yourprofile" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                            viewBox="0 0 24 24" style="fill:#0a66c2;transform:rotate(0deg);opacity: 1;">
+                                            <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 
+      0h4.7v2.2h.1c.7-1.3 2.4-2.7 4.9-2.7 5.2 0 6.2 3.4 6.2 7.7V24h-5V16c0-1.9-.03-4.3-2.6-4.3-2.6 0-3 
+      2-3 4.1V24h-5V8z" />
+                                        </svg>
+                                    </a>
+                                    <span class="u-screen-reader-text">LinkedIn</span>
+                                
+                            </li>
+
+                        </ul> <!-- end s-footer__social -->
+                    </div>
+                    <div class="column xl-6 lg-12">
+                        <p class="ss-copyright">
+                            <span>© Copyright Spandana 2025</span>
+
+                        </p>
+                    </div>
+
+                    <div class="ss-go-top">
+                        <a class="smoothscroll" title="Back to Top" href="#top">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36"
+                                fill="none" stroke="#ffffff" stroke-width="1" stroke-linecap="round"
+                                stroke-linejoin="round">&lt;!--!
+                                Atomicons Free 1.00 by @atisalab License - https://atomicons.com/license/ (Icons: CC BY
+                                4.0)
+                                Copyright 2025 Atomicons --&gt;<polyline points="17 11 12 6 7 11"></polyline>
+                                <line x1="12" y1="18" x2="12" y2="6"></line>
+                            </svg>
+                        </a>
+                    </div> <!-- end ss-go-top -->
+                </div>
+
+            </footer> <!-- end s-footer -->
+
+    </div> <!-- end page-wrap -->
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
